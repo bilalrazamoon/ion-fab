@@ -1,5 +1,5 @@
 angular.module('ion-fab-button', [])
-    .directive('fabButton', function ($ionicScrollDelegate) {
+    .directive('fabButton', function fabButtonDirective() {
         return {
             restrict: 'E',
             replace: true,
@@ -11,17 +11,17 @@ angular.module('ion-fab-button', [])
         function isAnchor(attr) {
             return angular.isDefined(attr.href) || angular.isDefined(attr.ngHref);
         }
-
         //template
         function template(element, attr) {
             return isAnchor(attr) ?
                 '<a class="fab-button" ng-transclude></a>' :
                 '<button class="fab-button" ng-transclude></button>';
         }
-
-        //method
+        //link
         function link(scope, element, attr) {
-            var target = attr['target'];
+            var target = '#'+attr['targetId'];
+            //var bgColor = attr['bg-color'];
+            //element.style=bgColor;
             var targetEl = angular.element(document.querySelector(target));
             var savePos = 0;
             targetEl.bind('scroll', function (e) {
@@ -39,4 +39,3 @@ angular.module('ion-fab-button', [])
             });
         }
     });
-
