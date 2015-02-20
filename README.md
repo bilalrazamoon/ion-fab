@@ -16,6 +16,7 @@ Include `ion-fabButton.css` and `ion-fabButton.js` after the rest of your Ionic 
 <ion-content has-bouncing="false" id="scrollFabButtonTarget">
   ...
 </ion-content>
+```
 
 ###Note
 Values in fab-button attr="target-id" and ion-content attr="id" should be same.
