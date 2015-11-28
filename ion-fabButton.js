@@ -9,7 +9,7 @@ angular.module('ion-fab-button', [])
         };
         //isAnchor
         function isAnchor(attr) {
-            return angular.isDefined(attr.href) || angular.isDefined(attr.ngHref);
+            return angular.isDefined(attr.href) || angular.isDefined(attr.ngHref) || angular.isDefined(attr.uiSref);
         }
         //template
         function template(element, attr) {
