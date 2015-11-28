@@ -14,8 +14,12 @@ angular.module('starter', ['ionic', 'ion-fab-button'])
     })
     .controller('mainCtrl', function ($scope) {
         $scope.todos = [];
-        for (i = 0; i <= 40; i++) {
-            $scope.todos.push({what: 'Brunch this weekend?', who: 'Min Li Chan', img: 'img/ionic.png'})
+        for (var i = 0; i <= 50; i++) {
+            $scope.todos.push({
+                what: 'Brunch this weekend?',
+                who: 'Min Li Chan',
+                img: 'img/ionic.png'
+            })
         }
     })
 ;

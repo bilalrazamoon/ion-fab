@@ -7,17 +7,24 @@ Android [floating action button](http://www.google.com/design/spec/components/bu
 
 ## Usage
 
-Include `ion-fabButton.css` and `ion-fabButton.js` after the rest of your Ionic and Angular includes. Then use the following AngularJS directives:
+Include `ion-fabButton.css` and `ion-fabButton.js` after the rest of your Ionic and Angular includes and add the ion-fab-button module to your configuration. Then use the following AngularJS directives:
 
 ```html
-<fab-button target-id="scrollFabButtonTarget">
-    <i class="icon ion ion-android-add"></i>
-</fab-button>
-<ion-content has-bouncing="false" id="scrollFabButtonTarget">
-  ...
-</ion-content>
+<!-- scrollable element -->
+<div fab-scroll-container>
+</div>
+<!-- fab directive must be after scrollable element -->
+<fab>
+    ...
+</fab>
 ```
 
-###Note
-Values in fab-button attr="target-id" and ion-content attr="id" should be same.
-Attribute "has-bouncing" is required.
+## Options
+
+disabled live displace (move) - default true - type boolean:
+
+```html
+<fab live-displace="false">
+    ...
+</fab>
+```
