@@ -21,5 +21,4 @@ angular.module('starter', ['ionic', 'fabDirective'])
                 img: 'img/ionic.png'
             })
         }
-    })
-;
+    });
