@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'ion-fab-button'])
+angular.module('starter', ['ionic', 'fabDirective'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {

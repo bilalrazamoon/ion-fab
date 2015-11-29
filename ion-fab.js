@@ -1,4 +1,4 @@
-angular.module('ion-fab-button', [])
+angular.module('fabDirective', [])
     .directive('fabScrollContainer', function () {
         return {
             restrict: 'A',
@@ -7,7 +7,7 @@ angular.module('ion-fab-button', [])
             }]
         };
     })
-    .directive('fabButton', function fabButtonDirective() {
+    .directive('ionFab', function fabButtonDirective() {
         return {
             restrict: 'E',
             replace: true,
@@ -24,8 +24,8 @@ angular.module('ion-fab-button', [])
         //template
         function template(element, attr) {
             return isAnchor(attr) ?
-                '<a class="fab-button" ng-transclude></a>' :
-                '<button class="fab-button" ng-transclude></button>';
+                '<a class="fab" ng-transclude></a>' :
+                '<button class="fab" ng-transclude></button>';
         }
 
         //link

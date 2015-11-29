@@ -4,6 +4,7 @@
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+
 @-webkit-keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -17,6 +18,7 @@
         transform: none;
     }
 }
+
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -32,6 +34,7 @@
         transform: none;
     }
 }
+
 .fadeInUp {
     -webkit-animation-name: fadeInUp;
     animation-name: fadeInUp;
@@ -66,7 +69,8 @@
     -webkit-animation-name: fadeOutDown;
     animation-name: fadeOutDown;
 }
-.fab-button {
+
+.fab {
     background-color: rgb(63, 81, 181);
     position: fixed;
     bottom: 20px;
@@ -87,13 +91,15 @@
     transition-property: transform, box-shadow;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
-.fab-button.activated {
+
+.fab.activated {
     opacity: 0.9;
     -webkit-transform: translate3d(0, -1px, 0);
     transform: translate3d(0, -1px, 0);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
-.fab-button .icon {
+
+.fab .icon {
     font-size: 24px;
     color: #ffffff;
 }
