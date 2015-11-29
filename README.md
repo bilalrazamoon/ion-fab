@@ -19,10 +19,18 @@ Include `ion-fab.css` and `ion-fab.js` after the rest of your Ionic and Angular 
 
 ## Options
 
-disabled live displace (move) - default true - type boolean:
+disabled live displace (move) - default true - type boolean
 
 ```html
     <ion-fab live-displace="false">
+        ...
+    </ion-fab>
+```
+
+set animation - default `fade` if live-displace="false", available animations; `zoom`, `fade` and `rotate`.
+
+```html
+    <ion-fab animation="zoom">
         ...
     </ion-fab>
 ```

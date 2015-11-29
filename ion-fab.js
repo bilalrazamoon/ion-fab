@@ -12,10 +12,10 @@ angular.module('fabDirective', [])
             restrict: 'E',
             replace: true,
             transclude: true,
-            scope: {'liveDisplace': '='},
             template: template,
             link: link
         };
+
         //isAnchor
         function isAnchor(attr) {
             return angular.isDefined(attr.href) || angular.isDefined(attr.ngHref) || angular.isDefined(attr.uiSref);
@@ -30,7 +30,7 @@ angular.module('fabDirective', [])
 
         //link
         function link(scope, element, attr) {
-            var liveDisplace = scope.liveDisplace === false ? scope.liveDisplace : true;
+            var liveDisplace = (attr.liveDisplace && attr.liveDisplace != 'false') || (!attr.liveDisplace && !attr.animation);
             var targetEl = element.inheritedData('fabScrollContainer') || window;
             element.addClass('animated');
             var scroll = 0, max = 80, current = 0, prevScroll = 0;
@@ -45,11 +45,21 @@ angular.module('fabDirective', [])
                 else {
                     if (current < scroll) {
                         current = scroll;
-                        element.removeClass('fadeInUp').addClass('fadeOutDown');
+                        if (attr.animation == 'zoom')
+                            element.removeClass('zoomIn').addClass('zoomOut');
+                        else if (attr.animation == 'rotate')
+                            element.removeClass('rotateIn').addClass('rotateOut');
+                        else
+                            element.removeClass('fadeInUp').addClass('fadeOutDown');
                     }
                     if (current > scroll) {
                         current = scroll;
-                        element.removeClass('fadeOutDown').addClass('fadeInUp');
+                        if (attr.animation == 'zoom')
+                            element.removeClass('zoomOut').addClass('zoomIn');
+                        else if (attr.animation == 'rotate')
+                            element.removeClass('rotateOut').addClass('rotateIn');
+                        else
+                            element.removeClass('fadeOutDown').addClass('fadeInUp');
                     }
                 }
                 prevScroll = scroll;
