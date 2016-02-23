@@ -7,7 +7,7 @@ angular.module('fabDirective', [])
             }]
         };
     })
-    .directive('ionFab', function fabButtonDirective() {
+    .directive('ionFab', function fabButtonDirective($ionicScrollDelegate) {
         return {
             restrict: 'E',
             replace: true,
@@ -35,7 +35,7 @@ angular.module('fabDirective', [])
             element.addClass('animated');
             var scroll = 0, max = 80, current = 0, prevScroll = 0;
             targetEl.bind('scroll', function (e) {
-                scroll = window.ionic ? e.detail.scrollTop : e.target.scrollTop;
+                scroll = $ionicScrollDelegate.getScrollPosition().top;
                 if (liveDisplace) {
                     current = scroll >= 0 ? Math.min(max, Math.max(0, current + scroll - prevScroll)) : 0;
                     window.requestAnimationFrame(function () {
